@@ -96,20 +96,8 @@ SOURCE 03_consultas_escola.sql;
 - Todas as **11 consultas** estão funcionando
 - Os dados atendem **100% dos requisitos** solicitados
 
-## 🎯 **RESULTADO ESPERADO**
-
-Após executar todos os scripts, você terá:
-- ✅ Sistema completo funcionando
-- ✅ Dados realísticos para testes
-- ✅ Consultas respondendo às perguntas do professor
-- ✅ Base sólida para apresentação
-
-## 📞 **SUPORTE**
 
 Se encontrar algum problema:
 1. Verifique se executou os arquivos na ordem correta
 2. Todas as consultas foram testadas e estão funcionando
 
----
-
-**🎉 SISTEMA PRONTO PARA APRESENTAÇÃO! 🎉**
