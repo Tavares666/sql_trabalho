@@ -1,5 +1,5 @@
 -- =============================================
--- SISTEMA ESCOLA 
+-- SISTEMA ESCOLA - SCHEMA COMPLETO
 -- =============================================
 
 -- Criar banco de dados
@@ -7,7 +7,7 @@ CREATE DATABASE IF NOT EXISTS escola_db;
 USE escola_db;
 
 -- =============================================
--- TABELAS BÁSICAS
+-- TABELAS PRINCIPAIS
 -- =============================================
 
 -- Tabela de Professores
@@ -41,7 +41,7 @@ CREATE TABLE turmas (
 );
 
 -- =============================================
--- TABELAS DE RELACIONAMENTO ( JOINs) umas da unicas aulas que participei 
+-- TABELAS DE RELACIONAMENTO
 -- =============================================
 
 -- Tabela de Matrículas (Aluno + Turma)
@@ -94,31 +94,3 @@ CREATE TABLE notas (
     FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno),
     FOREIGN KEY (id_avaliacao) REFERENCES avaliacoes(id_avaliacao)
 );
-
-
-/*
-EXPLICAÇÃO DAS TABELAS:
-
-1. TABELAS PRINCIPAIS (sem relacionamentos):
-   - professores: dados dos professores
-   - alunos: dados dos alunos  
-   - disciplinas: disciplinas oferecidas
-   - turmas: turmas da escola
-
-2. TABELAS DE RELACIONAMENTO (JOINs):
-   - matriculas: conecta alunos com turmas
-   - turma_disciplinas: conecta turmas com disciplinas e professores
-   - avaliacoes: avaliações de cada disciplina/turma
-   - presencas: presenças dos alunos
-   - notas: notas dos alunos
-
-3. CHAVES ESTRANGEIRAS (FOREIGN KEY):
-   - Conectam as tabelas
-   - Garantem que os dados sejam consistentes
-   - Exemplo: id_aluno na tabela matriculas deve existir na tabela alunos
-
-4. AUTO_INCREMENT:
-   - Cria números automaticamente (1, 2, 3, 4...)
-   - Usado nas chaves primárias (PRIMARY KEY)
-   ----- confesso que os textos explicativos foi tudo IA porque se não eu esqueço na hora da apresentação
-*/

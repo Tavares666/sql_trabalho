@@ -87,6 +87,8 @@ ranked_medias AS (
         media_geral,
         ROW_NUMBER() OVER (PARTITION BY id_turma ORDER BY media_geral DESC) as ranking
     FROM medias_por_turma
+    --Esta linha é uma função de janela (window function) que cria rankings numerados dentro de grupos, 
+    --permitindo identificar facilmente o melhor aluno de cada turma (guanabara)!
 )
 SELECT 
     turma,
@@ -221,7 +223,6 @@ ORDER BY taxa_presenca_percent ASC, turma, disciplina, aluno;
 
 SELECT 
     av.nome as avaliacao,
-    av.tipo,
     d.nome as disciplina,
     t.nome as turma,
     COUNT(n.id_nota) as total_notas,
@@ -235,7 +236,7 @@ JOIN avaliacoes av ON n.id_avaliacao = av.id_avaliacao
 JOIN turma_disciplinas td ON av.id_turma_disciplina = td.id_turma_disciplina
 JOIN disciplinas d ON td.id_disciplina = d.id_disciplina
 JOIN turmas t ON td.id_turma = t.id_turma
-GROUP BY av.id_avaliacao, av.nome, av.tipo, d.nome, t.nome
+GROUP BY av.id_avaliacao, av.nome, d.nome, t.nome
 ORDER BY t.nome, d.nome, av.data_avaliacao;
 
 -- =============================================
